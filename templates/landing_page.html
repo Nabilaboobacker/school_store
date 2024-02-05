@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}Landing Page{% endblock %}
+{% block body %}
+<div class="container mt-5">
+    <div class="border p-5">
+        <p>Welcome back, {{user}}! 🎓✨ Step into the personalized realm of our School Store – your exclusive
+            gateway to a world where learning meets style. As you explore our curated collection,
+            each click is a step toward academic excellence and personal expression.
+            From customized stationery to tech essentials tailored to your educational journey,
+            our School Store is more than just a shop; it's your companion in the pursuit of knowledge.
+            Your presence here fuels the spirit of our educational community,
+            and every purchase contributes to the growth of our school.
+            Get ready to embark on a shopping experience uniquely crafted for you.
+            Your adventure awaits at the School Store – where your education meets exceptional possibilities!📚💻,
+            Click the button below to fill the form for more information.
+        </p>
+        {% if not details %}
+        <a href="{% url 'user_profile' %}"><button class="btn btn-dark">enter details</button></a>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

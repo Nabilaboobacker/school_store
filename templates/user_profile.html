@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Enter user details{% endblock %}
+{% block script %}
+<script src="{% static 'script.js' %}"></script>
+{% endblock %}
+{% block body %}
+<div class="container">
+     <div class="mt-5">
+        <h4 class="text-center">Enter user details!</h4>
+    </div>
+    <div>
+        {% load crispy_forms_tags %}
+        <form id='user_profile_form' action='{% url 'user_profile' %}' class='mx-auto'  style='width:50%' method="POST">
+            {% csrf_token %}
+            {{ form | crispy }}
+
+
+            <input class="btn border" type="submit">
+            <a class='btn border' href="{% url 'logout' %}">Logout</a>
+        </form>
+
+    </div>  
+</div>
+{% endblock %}
+
+

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %}home{% endblock %}
+{% block body %}
+<div class="container">
+    <div class="mt-5 border p-5">
+        <p>Welcome to our School Store, the heart of inspiration and innovation! 📚✨ Step into a world where education
+            meets creativity, and curiosity transforms into possibility. At our School Store, we believe in making the
+            journey of learning as exciting as the destination. From vibrant stationery to tech-savvy tools,
+            we curate an ensemble of supplies that go beyond the ordinary.
+        </p>
+        {% if not user.is_authenticated %}
+        <span>For more details,</span>
+        <a href="{% url 'login_user' %}"><button class="btn btn-dark border">Login</button></a>
+        <a href="{% url 'register_user' %}"><button class="btn btn-dark border">Register</button></a>
+        {% endif %}
+
+    </div>
+</div>
+{% endblock %}
